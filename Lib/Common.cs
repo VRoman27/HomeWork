@@ -100,6 +100,18 @@ public static class Сalculation
 
         return result;
     }
+    public static int SumDigitInNumber(int number)
+    {
+        int sum = 0;
+        if (number < 0) number *= -1;
+        while (number != 0)
+        {
+            sum += number % 10;
+            number /= 10;
+        }
+
+        return sum;
+    }
 }
 
 public static class GetArray
