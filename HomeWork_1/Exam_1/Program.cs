@@ -1,9 +1,8 @@
-﻿// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+﻿using Common;
+// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 
-Console.Write("Введите первое число: ");
-double num_1 = double.Parse(Console.ReadLine());
-Console.Write("Введите второе число: ");
-double num_2 = double.Parse(Console.ReadLine());
+double num_1 = EnteringData.DoubleData("Введите первое число: ");
+double num_2 = EnteringData.DoubleData("Введите второе число: ");
 
 if(num_1 == num_2)
 {
