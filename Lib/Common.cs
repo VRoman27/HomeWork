@@ -27,6 +27,18 @@ public static class EnteringData
         }
         return number;
     }
+    public static int[] IntArrayData()
+    {
+        int length = IntData("Введите количество элементов: ");
+        int[] array = new int[length];
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = IntData($"Введите элемент №{i}: ");
+        }
+
+        return array;
+    }
 
 }
 
@@ -56,7 +68,7 @@ public static class MultiDigitNumbers
     }
 }
 
-public static class Сalculation
+public static class Calculation
 {
     public static double Length2D(double x1, double y1, double x2, double y2)
     {
@@ -118,10 +130,13 @@ public static class GetArray
 {
     public static void PrintTable(int[] array)
     {
-        for (int i = 0; i < array.Length; i++)
+        Console.Write("[");
+        for (int i = 0; i < array.Length - 1; i++)
         {
-            Console.Write(array[i] + " ");
+            Console.Write($"{array[i]}, ");
         }
+        Console.Write(array[array.Length - 1]);
+        Console.Write("]");
     }
     public static int[] GenElementsInOrder(int length)
     {

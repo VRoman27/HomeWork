@@ -3,5 +3,5 @@
 
 int number = EnteringData.IntData("Введите число: ");
 
-Console.WriteLine($"Сумма цифр в числе: {Сalculation.SumDigitInNumber(number)}");
+Console.WriteLine($"Сумма цифр в числе: {Calculation.SumDigitInNumber(number)}");
 

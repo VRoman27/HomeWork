@@ -4,4 +4,4 @@
 double number = EnteringData.DoubleData("Введите число: ");
 double degree = EnteringData.DoubleData("Введите степень: ");
 
-Console.WriteLine(Сalculation.Pow(number,degree));
+Console.WriteLine(Calculation.Pow(number,degree));
