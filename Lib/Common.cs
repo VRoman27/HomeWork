@@ -78,7 +78,7 @@ public static class Calculation
     {
         return Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
     }
-    public static double Pow(double num, double degree)
+    public static double Pow(double num, int degree)
     {
         double result = 0;
         if (degree == 0)
@@ -103,10 +103,7 @@ public static class Calculation
         }
         else
         {
-            //Для дробных степеней. Не знаю как работает, нашёл в интернете.
-            long i = BitConverter.DoubleToInt64Bits(num);
-            i = (long)(4606853616395542500L + degree * (i - 4606853616395542500L));
-            result = BitConverter.Int64BitsToDouble(i);
+            return -1;
         }
 
 
