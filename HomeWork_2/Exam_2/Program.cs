@@ -1,22 +1,19 @@
-﻿/*Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
+﻿using Common;
+/*Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
 что третьей цифры нет.*/
 
-bool isParsed = false;
 int num = 0;
-while (!isParsed)
+
+do
 {
-    Console.Write("Введите число: ");
-    isParsed = int.TryParse(Console.ReadLine(), out num);
-    if (isParsed & num / 100 == 0)
+    num = EnteringData.IntData("Введите число: ");
+        if (num / 100 == 0)
     {
         Console.WriteLine("Нет третьей цифры!");
-        isParsed = false;
     }
-    else if (!isParsed)
-    {
-        Console.WriteLine("Это не число!");
-    }
+
 }
+while(num / 100 == 0);
 
 int thirdDigit = 0;
 
