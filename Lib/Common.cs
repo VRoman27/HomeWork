@@ -56,7 +56,7 @@ public static class MultiDigitNumbers
     }
 }
 
-public static class Pythagoras
+public static class Сalculation
 {
     public static double Length2D(double x1, double y1, double x2, double y2)
     {
@@ -65,6 +65,40 @@ public static class Pythagoras
     public static double Length3D(double x1, double y1, double z1, double x2, double y2, double z2)
     {
         return Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
+    }
+    public static double Pow(double num, double degree)
+    {
+        double result = 0;
+        if (degree == 0)
+        {
+            result = 1;
+        }
+        else if (degree >= 1)
+        {
+            result = num;
+            for (int i = 1; i < degree; i++)
+            {
+                result *= num;
+            }
+        }
+        else if (degree <= -1)
+        {
+            result = 1 / num;
+            for (int i = -1; i > degree; i--)
+            {
+                result /= num;
+            }
+        }
+        else
+        {
+            //Для дробных степеней. Не знаю как работает, нашёл в интернете.
+            long i = BitConverter.DoubleToInt64Bits(num);
+            i = (long)(4606853616395542500L + degree * (i - 4606853616395542500L));
+            result = BitConverter.Int64BitsToDouble(i);
+        }
+
+
+        return result;
     }
 }
 

@@ -8,6 +8,6 @@ double x2 = EnteringData.DoubleData("Введите x2: ");
 double y2 = EnteringData.DoubleData("Введите y2: ");
 double z2 = EnteringData.DoubleData("Введите z2: ");
 
-Console.WriteLine(Pythagoras.Length3D(x1, y1, z1, x2, y2, z2));
+Console.WriteLine(Сalculation.Length3D(x1, y1, z1, x2, y2, z2));
 
 
