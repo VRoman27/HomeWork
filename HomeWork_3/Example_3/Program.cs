@@ -3,5 +3,5 @@
 
 int num = EnteringData.IntData("Введите число: ");
 
-GetArray.PrintTable(GetArray.PowTableElemetsInt(GetArray.GenElementsInOrder(num), 3));
+GetArray.PrintTableInt(GetArray.PowTableElemetsInt(GetArray.GenElementsInOrder(num), 3));
 

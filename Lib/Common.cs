@@ -40,6 +40,18 @@ public static class EnteringData
         return array;
     }
 
+    public static double[] DoubleArrayData()
+    {
+        int length = IntData("Введите количество элементов: ");
+        double[] array = new double[length];
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = DoubleData($"Введите элемент №{i}: ");
+        }
+
+        return array;
+    }
 }
 
 public static class MultiDigitNumbers
@@ -125,11 +137,18 @@ public static class Calculation
 
 public static class GetArray
 {
-    public static void PrintTable(int[] array)
-{
-    string str = string.Join(", ", array);
-    Console.WriteLine($"[{str}]");
-}
+    public static void PrintTableInt(int[] array)
+    {
+        string str = string.Join(", ", array);
+        Console.WriteLine($"[{str}]");
+    }
+
+    public static void PrintTableDouble(double[] array)
+    {
+        string str = string.Join(", ", array);
+        Console.WriteLine($"[{str}]");
+    }
+
     public static int[] GenElementsInOrder(int length)  //Создаёт массив по возрастанию
     {
         int[] array = new int[length];
@@ -139,6 +158,7 @@ public static class GetArray
         }
         return array;
     }
+
     public static int[] PowTableElemetsInt(int[] array, int degree) //Возведение в степень каждого элемента массива
     {
 
@@ -171,13 +191,24 @@ public static class GetArray
         return randomNumbers;
     }
 
+    public static double[] CreateRandomArrayDouble(int size, int start, int end)
+    {
+        double[] randomNumbers = new double[size];
+        Random rand = new Random();
+        for (int i = 0; i < randomNumbers.Length; i++)
+        {
+            randomNumbers[i] = rand.Next(start, end);
+        }
+        return randomNumbers;
+    }
+
     public static int CountEvenNumbers(int[] array)
     {
         int count = 0;
         for (int i = 0; i < array.Length; i++)
         {
-            if(array[i]<0) return -1;
-            if(array[i]%2 == 0)
+            if (array[i] < 0) return -1;
+            if (array[i] % 2 == 0)
             {
                 count++;
             }
@@ -187,10 +218,29 @@ public static class GetArray
     public static int SumNotEvenIndexElement(int[] array)
     {
         int sum = 0;
-        for (int i = 1; i < array.Length; i+=2)
+        for (int i = 1; i < array.Length; i += 2)
         {
-            sum+=array[i];
+            sum += array[i];
         }
         return sum;
+    }
+
+    public static (double min, double max) FindMinAndMaxElement(double[] array)
+    {
+        double min = array[0];
+        double max = array[0];
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i] < min)
+            {
+                min = array[i];
+            }
+            if (array[i] > max)
+            {
+                max = array[i];
+            }
+
+        }
+        return (min, max);
     }
 }
