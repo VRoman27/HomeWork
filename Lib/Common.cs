@@ -126,16 +126,11 @@ public static class Calculation
 public static class GetArray
 {
     public static void PrintTable(int[] array)
-    {
-        Console.Write("[");
-        for (int i = 0; i < array.Length - 1; i++)
-        {
-            Console.Write($"{array[i]}, ");
-        }
-        Console.Write(array[array.Length - 1]);
-        Console.Write("]");
-    }
-    public static int[] GenElementsInOrder(int length)
+{
+    string str = string.Join(", ", array);
+    Console.WriteLine($"[{str}]");
+}
+    public static int[] GenElementsInOrder(int length)  //Создаёт массив по возрастанию
     {
         int[] array = new int[length];
         for (int i = 1; i < length; i++)
@@ -144,7 +139,7 @@ public static class GetArray
         }
         return array;
     }
-    public static int[] PowTableElemetsInt(int[] array, int degree)
+    public static int[] PowTableElemetsInt(int[] array, int degree) //Возведение в степень каждого элемента массива
     {
 
         for (int i = 1; i <= array.Length; i++)
@@ -154,7 +149,7 @@ public static class GetArray
 
         return array;
     }
-    public static double[] PowTableElemetsDouble(double[] array, int degree)
+    public static double[] PowTableElemetsDouble(double[] array, int degree)  //Возведение в степень каждого элемента массива
     {
 
         for (int i = 1; i <= array.Length; i++)
@@ -163,5 +158,30 @@ public static class GetArray
         }
 
         return array;
+    }
+
+    public static int[] CreateRandomArrayInt(int size, int start, int end)
+    {
+        int[] randomNumbers = new int[size];
+        Random rand = new Random();
+        for (int i = 0; i < randomNumbers.Length; i++)
+        {
+            randomNumbers[i] = rand.Next(start, end);
+        }
+        return randomNumbers;
+    }
+
+    public static int CountEvenNumbers(int[] array)
+    {
+        int count = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if(array[i]<0) return -1;
+            if(array[i]%2 == 0)
+            {
+                count++;
+            }
+        }
+        return count;
     }
 }
