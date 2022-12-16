@@ -3,5 +3,15 @@
 
 int num = EnteringData.IntData("Введите число: ");
 
-GetArray.PrintTableInt(GetArray.PowTableElemetsInt(GetArray.GenElementsInOrder(num), 3));
+GetArray.PrintTableInt(PowTableElemets(GetArray.GenElementsInOrder(num), 3));
 
+int[] PowTableElemets(int[] array, int degree) //Возведение в степень каждого элемента массива
+    {
+
+        for (int i = 1; i <= array.Length; i++)
+        {
+            array[i - 1] = (int)Math.Pow((double)i, degree);
+        }
+
+        return array;
+    }
