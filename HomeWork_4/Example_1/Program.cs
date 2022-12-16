@@ -1,8 +1,8 @@
 ﻿using Common;
 // Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 
-double number = EnteringData.DoubleData("Введите число: ");
-int degree = EnteringData.IntData("Введите степень: ");
+double number = InputData.DoubleData("Введите число: ");
+int degree = InputData.IntData("Введите степень: ");
 
 Console.WriteLine(Pow(number, degree));
 

@@ -1,6 +1,6 @@
 ﻿namespace Common;
 
-public static class EnteringData
+public static class InputData
 {
     public static int IntData(string text)
     {

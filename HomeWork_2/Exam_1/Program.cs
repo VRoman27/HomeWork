@@ -6,7 +6,7 @@ int num = 0;
 
 do
 {
-    num = EnteringData.IntData("Введите трёхзначное число: ");
+    num = InputData.IntData("Введите трёхзначное число: ");
 
 }
 while (!(num < 1000 & num > 99));

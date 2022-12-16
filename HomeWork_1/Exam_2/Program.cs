@@ -1,9 +1,9 @@
 ﻿using Common;
 // Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 
-double num_1 = EnteringData.DoubleData("Введите первое число: ");
-double num_2 = EnteringData.DoubleData("Введите второе число: ");
-double num_3 = EnteringData.DoubleData("Введите третье число: ");
+double num_1 = InputData.DoubleData("Введите первое число: ");
+double num_2 = InputData.DoubleData("Введите второе число: ");
+double num_3 = InputData.DoubleData("Введите третье число: ");
 
 double max = num_1;
 

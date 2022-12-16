@@ -6,7 +6,7 @@ int num = 0;
 
 do
 {
-    num = EnteringData.IntData("Введите число: ");
+    num = InputData.IntData("Введите число: ");
         if (num / 100 == 0)
     {
         Console.WriteLine("Нет третьей цифры!");
