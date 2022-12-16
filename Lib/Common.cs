@@ -58,13 +58,13 @@ public static class GetArray
 {
     public static void PrintTableInt(int[] array)
     {
-        string str = string.Join(", ", array);
+        string str = string.Join("; ", array);
         Console.WriteLine($"[{str}]");
     }
 
     public static void PrintTableDouble(double[] array)
     {
-        string str = string.Join(", ", array);
+        string str = string.Join("; ", array);
         Console.WriteLine($"[{str}]");
     }
 
