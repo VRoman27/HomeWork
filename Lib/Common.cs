@@ -68,6 +68,29 @@ public static class GetArray
         Console.WriteLine($"[{str}]");
     }
 
+    public static void Print2DArrayInt(int[,] array)
+    {
+        for (var i = 0; i < array.GetLength(0); i++)
+        {
+            for (var j = 0; j < array.GetLength(1); j++)
+            {
+                Console.Write(array[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+    public static void Print2DArrayDouble(double[,] array)
+    {
+        for (var i = 0; i < array.GetLength(0); i++)
+        {
+            for (var j = 0; j < array.GetLength(1); j++)
+            {
+                Console.Write(array[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
     public static int[] GenElementsInOrder(int length)  //Создаёт массив по возрастанию
     {
         int[] array = new int[length];
@@ -90,6 +113,38 @@ public static class GetArray
         return randomNumbers;
     }
 
+    public static double[,] CreateRandom2DArrayDouble(int countLine, int countColumn)
+    {
+        double[,] array = new double[countLine, countColumn];
+
+        Random random = new Random();
+
+        for (var i = 0; i < array.GetLength(0); i++)
+        {
+            for (var j = 0; j < array.GetLength(1); j++)
+            {
+                array[i, j] = Math.Round(random.NextDouble() * 100, 2);
+            }
+        }
+
+        return array;
+    }
+    public static int[,] CreateRandom2DArrayInt(int countLine, int countColumn, int start, int end)
+    {
+        int[,] array = new int[countLine, countColumn];
+
+        Random random = new Random();
+
+        for (var i = 0; i < array.GetLength(0); i++)
+        {
+            for (var j = 0; j < array.GetLength(1); j++)
+            {
+                array[i, j] = random.Next(start, end);
+            }
+        }
+
+        return array;
+    }
 
     public static (double min, double max) FindMinAndMaxElement(double[] array)
     {
