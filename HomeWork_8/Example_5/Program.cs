@@ -4,23 +4,70 @@
 int line = InputData.IntData("Введите количество строк: ");
 int column = InputData.IntData("Введите количество столбцов: ");
 int[,] array = new int[line, column];
-FillSpiral(array, 0, 0, 1);
-GetArray.Print2DArrayInt(array);
+FillSpiral(array);
+Print2DArray(array);
 
-void FillSpiral(int[,] array, int xIndex, int yIndex, int value)
+void FillSpiral(int[,] array)
 {
-    if (xIndex >= 0 && yIndex >= 0 && xIndex < array.GetLength(0) && yIndex < array.GetLength(1))
+    int startX = 0, finishX = array.GetLength(0) - 1,
+        startY = 0, finisY = array.GetLength(1) - 1;
+    int currentX = 0, currentY = 0;
+    int number = 1;
+
+    while (number < array.Length)
     {
-        if (array[xIndex, yIndex] == 0)
+        currentX = startX;
+        for (currentY = startY; currentY < finisY; currentY++)
         {
-            array[xIndex, yIndex] = value;
-            FillSpiral(array, xIndex, yIndex + 1, value + 1);
-            FillSpiral(array, xIndex + 1, yIndex, value + 1);
-            FillSpiral(array, xIndex, yIndex - 1, value + 1);
-            FillSpiral(array, xIndex - 1, yIndex, value + 1);
+            array[currentX, currentY] = number;
+            number++;
         }
+        finisY--;
+        for (currentX = startX; currentX < finishX; currentX++)
+        {
+            array[currentX, currentY] = number;
+            number++;
+        }
+        finishX--;
+        for (currentY = finisY + 1; currentY > startY; currentY--)
+        {
+            array[currentX, currentY] = number;
+            number++;
+        }
+        startY++;
+        for (currentX = finishX + 1; currentX > startX; currentX--)
+        {
+            array[currentX, currentY] = number;
+            number++;
+        }
+        startX++;
     }
 
 
 
 }
+
+
+void Print2DArray(int[,] array)
+{
+    for (var i = 0; i < array.GetLength(0); i++)
+    {
+        for (var j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i, j] / 10 == 0) Console.Write("0" + array[i, j] + " ");
+            else Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
